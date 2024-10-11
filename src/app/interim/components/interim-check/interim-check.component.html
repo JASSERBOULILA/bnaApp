@@ -1,0 +1,32 @@
+
+<div class="card">
+  <p-table
+      [value]="data"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+  >
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width:25%">matricule </th>
+              <th style="width: 25%;">debut</th>
+              <th style="width: 25%">fin</th>
+              <th style="width:25%">replacer</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-data>
+          <tr>
+              <td>{{ data.matricule }}</td>
+              <td>{{ data.debut | date }}</td>
+              <td>{{ data.fin | date}}</td>
+              <td>{{data.userId}}</td>
+              <!-- <td>{{ data.firstname +"1 " +  data.lastname }}</td> -->
+              <!-- <td>{{ data.structure }}</td> -->
+              <!-- <td>{{ data.codeDivision }}</td> -->
+              <td>
+          </tr>
+      </ng-template>
+  </p-table>
+</div>
+

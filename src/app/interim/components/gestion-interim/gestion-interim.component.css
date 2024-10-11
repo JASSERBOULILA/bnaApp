@@ -1,0 +1,56 @@
+body{
+  background-color: grey;
+}
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+span{
+  color: grey;
+  text-align: center;
+}
+form{
+  gap: 10px;
+  border-top:1px solid green;
+  border-bottom: 1px solid green;
+  width: 100%;
+}
+.form-container {
+  width: 400px;
+  margin: 0 auto; /* This centers the container horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center; /* This centers the contents of the container */
+}
+h2, p {
+  text-align: left;
+}
+.form-group {
+  margin-bottom: 30px;
+  text-align: left; /* Align form elements to the left */
+}
+.form-group span{
+  text-align: center;
+  display: flex;
+  width: 100%;
+}
+.form-group label {
+  display: flex;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}

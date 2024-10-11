@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="logo-container">
+  <div class="logo">
+    <img src="assets/images/1_bna.png" width="301px" height="167px" />
+  </div>
+  <div class="text-content">
+    <h2>HABILITATION</h2>
+    <p>Banque Nationale Agricole</p>
+  </div>
+</div>
+  <div class="gap"></div>
+  <form>
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="matricule" [(ngModel)]="matricule" (ngModelChange)="onpasswordChange()" [ngModelOptions]="{standalone: true}"/>
+        <label for="matricule">Matricule </label>
+      </p-floatLabel>
+    </div>
+
+    @if (firstTime) {
+      <div class="form-group">
+        <p-floatLabel>
+          <input pInputText id="email" [(ngModel)]="email" (ngModelChange)="onEmailChange()" [ngModelOptions]="{standalone: true}"/>
+          <label for="matricule">Email</label>
+        </p-floatLabel>
+      </div>
+    }
+    @if(secondTime){
+      <div class="form-group relative-position">
+        <p-floatLabel>
+          <input pInputText id="password" type="{{ passwordFieldType }}" [(ngModel)]="password" (ngModelChange)="onPasswordChange()" [ngModelOptions]="{standalone: true}" />
+          <label for="password">Password  </label>
+          <i class="pi" [ngClass]="{'pi-eye': passwordVisible, 'pi-eye-slash': !passwordVisible}" id="view-password" (click)="togglePasswordVisibility()"></i>
+        </p-floatLabel>
+      </div>
+    }
+
+    <p id="error" *ngIf="error">{{ error }}</p>
+    <p *ngIf="!error">To Login Enter your Matricule Number And Your Password </p>
+    <p-messages label="error" [enableService]="false" />
+    <div class="buttons">
+      <button id="login" class="custom-button" (click)="login()">Login</button>
+    </div>
+    @if (showpopup == true) {
+      <ng-toast [style]="{width:'1000px', transform: 'translate(-50%, -50%)'}"></ng-toast>
+    }
+
+  </form>
+</div>

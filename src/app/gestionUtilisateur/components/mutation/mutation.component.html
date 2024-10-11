@@ -1,0 +1,83 @@
+<div class="header">
+  <h2>Mutation </h2>
+</div>
+<div class="container">
+  <form>
+    <!-- First row -->
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="matricule" [(ngModel)]="userData.matricule" (ngModelChange)="onChangeMatricule()"  [ngModelOptions]="{standalone: true}"/>
+        <label for="matricule"> Matricule   </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="firstName" [(ngModel)]="userData.firstname"  [ngModelOptions]="{standalone: true}"/>
+        <label for="firstName">First Name    </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="lastName" [(ngModel)]="userData.lastname"  [ngModelOptions]="{standalone: true}"/>
+        <label for="lastName">Last Name   </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="email" type="email" [(ngModel)]="userData.email"  [ngModelOptions]="{standalone: true}"/>
+        <label for="email">Email </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="cin" [(ngModel)]="userData.cin"  [ngModelOptions]="{standalone: true}"/>
+        <label for="cin">Cin </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="codeDivisionn" [(ngModel)]="userData.codeDivision"  [ngModelOptions]="{standalone: true}"/>
+        <label for="codeDivisionn">Code Division </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="status" [(ngModel)]="userData.status"  [ngModelOptions]="{standalone: true}"/>
+        <label for="status">Status </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="structure" [(ngModel)]="userData.structure"  [ngModelOptions]="{standalone: true}"/>
+        <label for="structure">Structure </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="role" [(ngModel)]="userData.role"  [ngModelOptions]="{standalone: true}"/>
+        <label for="role">Role </label>
+        <span>0 : User 1:Admin</span>
+      </p-floatLabel>
+    </div>
+    <p>{{error}}</p>
+    <p-messages label="error" [enableService]="false" />
+
+    <div class="buttons">
+      <p-button label="Quitter" [raised]="true" severity="success" ></p-button>
+      <p-button label="Cancel" [raised]="true" severity="danger" ></p-button>
+      <p-button label="Valider" [raised]="true" severity="succes" (click)="showPopup()"></p-button>
+    </div>
+    @if (showpopup == true) {
+      <ng-toast [style]="{width:'300px'}"></ng-toast>
+    }
+  </form>
+</div>
+

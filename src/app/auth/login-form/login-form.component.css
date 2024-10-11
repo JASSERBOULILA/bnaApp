@@ -1,0 +1,131 @@
+/* styles.css */
+/* styles.css */
+.container {
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  align-items: center; /* Center horizontally */
+  height: 100vh;
+  margin: 0 auto;
+}
+/* Add margin-bottom to create a gap between input fields */
+.container form p-floatLabel + p-floatLabel {
+  margin-top: 10px; /* Adjust the value to increase or decrease the gap */
+}
+.logo-container {
+  width: 60%; /* Set the width to 80% */
+   /* Center the div horizontally */
+  display: flex;
+  /* gap:20px */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid green;
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+  border-radius: 10px;
+  padding: 10px;
+}
+#error{
+  color:red;
+}
+.logo-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1px; /* Position the pseudo-element to the right */
+  width: 1px; /* Set the width of the right border */
+  background-color: green; /* Set the color of the right border */
+}
+.logo {
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+h2, p {
+  text-align: center;
+}
+.gap {
+  margin-bottom: 20px; /* Adjust the gap size as needed */
+}
+/* Add your existing styles for the form elements here */
+.buttons{
+  gap: 10px;
+}
+form{
+  gap: 10px;
+}
+.form-container {
+  width: 400px;
+  margin: 0 auto; /* This centers the container horizontally */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center; /* This centers the contents of the container */
+}
+
+.form-group {
+  margin-bottom: 30px;
+  text-align: left; /* Align form elements to the left */
+}
+
+.form-group label {
+  display: flex;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Align the view-password span vertically with the input field */
+#view-password {
+  position: absolute;
+  top: 50%;
+  right: 5px; /* Adjust as needed to position the "Show" span */
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.relative-position {
+  position: relative;
+}
+.form-group.relative-position {
+  position: relative;
+}
+
+.form-group.relative-position input {
+  padding-right: 30px; /* Adjust this value as needed to make space for the icon */
+}
+
+.form-group.relative-position .pi-eye {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust this value as needed to position the icon */
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* Add styles for the input type toggle */
+.show-password {
+  font-weight: bold;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.custom-button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: green; /* Blue color, you can change it as needed */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+

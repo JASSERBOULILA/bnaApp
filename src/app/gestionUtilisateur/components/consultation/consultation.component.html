@@ -1,0 +1,40 @@
+
+<div class="card">
+  <p-table
+      [value]="data"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+  >
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width:20%">matricule Number</th>
+              <th style="width:20%">Full Name</th>
+              <th style="width:16%">Structure</th>
+              <th style="width:16.66%">Code Division</th>
+              <th style="width:16.66%">Status</th>
+              <th style="width:20%">Delete</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-data>
+          <tr>
+              <td>{{ data.matricule }}</td>
+              <td>{{ data.firstname +" " +  data.lastname }}</td>
+              <td>{{ data.structure }}</td>
+              <td>{{ data.codeDivision }}</td>
+              <td>
+              <p-tag
+                        [value]="data.status"
+                        [severity]="getSeverity(data.status)" />
+              </td>
+
+            <td *ngIf="data.matricule != userMatricule ">
+              <p-button (onClick)="deleteUser(data.id)" icon="pi pi-trash">
+              </p-button>
+            </td>
+
+          </tr>
+      </ng-template>
+  </p-table>
+</div>

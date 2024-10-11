@@ -1,0 +1,47 @@
+<div class="header">
+  <h2>Create Interim</h2>
+</div>
+<div class="container">
+  <form>
+    <!-- First row -->
+    <div class="form-group">
+      <p-floatLabel>
+        <input pInputText id="matricule" [(ngModel)]="userData.matricule"  [ngModelOptions]="{standalone: true}"/>
+        <label for="matricule">Matricule </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel >
+        <input pInputText id="dateDebut" [(ngModel)]="debut" type="date"   disabled="false"   [ngModelOptions]="{standalone: true}"/>
+        <label for="dateDebut">Debut de linterim </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group">
+      <p-floatLabel >
+        <input pInputText id="dateFin" [(ngModel)]="fin"  disabled="false"  type="date" [ngModelOptions]="{standalone: true}"/>
+        <label for="dateFin">Fin de linterim </label>
+      </p-floatLabel>
+    </div>
+
+    <div class="form-group flex">
+        <select class="border-green border-2" id="matriculeId" [(ngModel)]="userId" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let matricule of matriculeArray" [value]="matricule.matricule">{{ matricule.matricule }}</option>
+        </select>
+        <label for="matriculeId">Matricule for interim switch</label>
+    </div>
+
+    <p>{{error}}</p>
+    <p-messages label="error" [enableService]="false" />
+
+    <div class="buttons">
+      <p-button label="Quitter" [raised]="true" severity="success" ></p-button>
+      <p-button label="Cancel" [raised]="true" severity="danger" ></p-button>
+      <p-button label="Valider" [raised]="true" severity="succes" (onClick)="showPopup()" ></p-button>
+    </div>
+    @if (showpopup == true) {
+      <ng-toast [style]="{width:'300px'}"></ng-toast>
+    }
+  </form>
+</div>
